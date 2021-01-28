@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Sepatu Adidas",
+    "price": 900000,
+    "type": "footwear"
+  },
+  {
+    "name": "Baju Olah Raga",
+    "price": 120000,
+    "type": "men's casual wear"
+  },
+  {
+    "name": "Gelang Ajaib",
+    "price": 750000,
+    "type": "accessories"
+  },
+  {
+    "name": "Lengan Panjang Pria",
+    "price": 1000000,
+    "type": "men's formal wear"
+  },
+  {
+    "name": "Rok Mini",
+    "price": 500000,
+    "type": "women's casual wear"
+  },
+  {
+    "name": "Lengan Panjang Wanita",
+    "price": 850000,
+    "type": "women's formal wear"
+  },
+  {
+    "name": "Sepatu Nike",
+    "price": 1200000,
+    "type": "footwear"
+  },
+  {
+    "name": "Sepatu Under Armour",
+    "price": 1100000,
+    "type": "footwear"
+  }
+]
