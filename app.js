@@ -1,10 +1,7 @@
 const express = require('express');
 const router = require('./routes/index');
 const session = require('express-session');
-<<<<<<< HEAD
 const formatPrice = require('./helpers/priceFormatter');
-=======
->>>>>>> stanlykwok
 
 const app = express();
 const port = 3000;
