@@ -1,10 +1,18 @@
+const { Customer, Order, Product } = require('../models/index');
+
 class Controller {
+  // Home page
   static homePage(req, res) {
     res.render('home');
   }
 
+  // Register page
   static registerPage(req, res) {
     res.render('register');
+  }
+
+  static registerPost(req, res) {
+
   }
 
   static loginPage(req, res) {

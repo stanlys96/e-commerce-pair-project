@@ -41,3 +41,24 @@ ul li:nth-child(6) {
   margin-top: 70px;
   text-align: center;
 }
+
+.register-content label:first-child {
+  display: inline-block;
+  margin-top: 25px;
+}
+
+.register-content form {
+  text-align: center;
+}
+
+.register-content input {
+  display: block;
+  margin: 15px auto;
+  width: 20%;
+}
+
+.register-content button {
+  padding: 5px 0;
+  margin-top: 10px;
+  width: 10%;
+}

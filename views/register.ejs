@@ -1,5 +1,14 @@
 <%- include('./partials/navbar.ejs') %>
 <div class="register-content">
   <h1>Register Form</h1>
+  <form action="/register" method="POST">
+    <label for="username">Username</label>
+    <input type="text" name="username">
+    <label for="email">Email</label>
+    <input type="email" name="email">
+    <label for="password">Password</label>
+    <input type="password" name="password">
+    <button type="submit">Register</button>
+  </form>
 </div>
 <%- include('./partials/bottom.ejs') %>
