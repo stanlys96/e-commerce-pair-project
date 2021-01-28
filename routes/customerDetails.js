@@ -3,6 +3,14 @@ const Controller = require('../controllers/Controller');
 
 const router = express.Router();
 
-router.get('/', Controller.customerDetailsPage);
+const mid = (req, res, next) => {
+  if (req.session.userId) {
+    next();
+  } else {
+    res.redirect('/login');
+  }
+}
+
+router.get('/', mid, Controller.customerDetailsPage);
 
 module.exports = router;
