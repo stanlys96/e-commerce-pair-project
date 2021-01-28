@@ -15,15 +15,63 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Customer.init({
-    full_name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    address: DataTypes.STRING,
-    phone_number: DataTypes.STRING,
-    password: DataTypes.STRING,
-    username: DataTypes.STRING
+    full_name: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: 'Full name tidak boleh kosong'
+        }
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: 'Email tidak boleh kosong'
+        }
+      }
+    },
+    address: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: 'Address tidak boleh kosong'
+        }
+      }
+    },
+    phone_number: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: 'Phone number tidak boleh kosong'
+        }
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: 'Password tidak boleh kosong'
+        }
+      }
+    },
+    username: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: 'Username tidak boleh kosong'
+        }
+      }
+    },
+    isLoggedIn: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Customer',
   });
+
+  Customer.beforeCreate((user, options) => {
+    user.isLoggedIn = false;
+  })
+
   return Customer;
 };
