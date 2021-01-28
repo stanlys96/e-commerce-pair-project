@@ -4,23 +4,23 @@ class Controller {
   }
 
   static registerPage(req, res) {
-    res.send('Register Page');
+    res.render('register');
   }
 
   static loginPage(req, res) {
-    res.send('Login Page');
+    res.render('login');
   }
 
   static productPage(req, res) {
-    res.send('Product Page');
+    res.render('products');
   }
 
   static shoppingCartPage(req, res) {
-    res.send('Shopping Cart Page');
+    res.render('shoppingCart');
   }
 
   static orderDetailsPage(req, res) {
-    res.send('Order Details Page');
+    res.render('orderDetails');
   }
 }
 
