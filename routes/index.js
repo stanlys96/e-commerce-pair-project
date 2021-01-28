@@ -5,7 +5,7 @@ const router = express.Router();
 const registerRoutes = require('./register');
 const loginRoutes = require('./login');
 const productRoutes = require('./products');
-const customerCartRoutes = require('./customerCart');
+const shoppingCartRoutes = require('./shoppingCart');
 const orderDetails = require('./orderDetails');
 
 router.get('/', Controller.homePage);
@@ -13,7 +13,7 @@ router.get('/', Controller.homePage);
 router.use('/register', registerRoutes);
 router.use('/login', loginRoutes);
 router.use('/products', productRoutes);
-router.use('/customercart', customerCartRoutes);
+router.use('/shoppingcart', shoppingCartRoutes);
 router.use('/orderdetails', orderDetails);
 
 module.exports = router;

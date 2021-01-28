@@ -1,6 +1,6 @@
 class Controller {
   static homePage(req, res) {
-    res.send('Home Page');
+    res.render('login');
   }
 
   static registerPage(req, res) {
@@ -15,8 +15,8 @@ class Controller {
     res.send('Product Page');
   }
 
-  static customerCartPage(req, res) {
-    res.send('Cart Page');
+  static shoppingCartPage(req, res) {
+    res.send('Shopping Cart Page');
   }
 
   static orderDetailsPage(req, res) {

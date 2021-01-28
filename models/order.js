@@ -19,7 +19,15 @@ module.exports = (sequelize, DataTypes) => {
   Order.init({
     status: DataTypes.STRING,
     ship_date: DataTypes.STRING,
-    CustomerId: DataTypes.INTEGER
+    CustomerId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'Customers',
+        key: 'id'
+      },
+      onUpdate: 'CASCADE',
+      onDelete: 'CASCADE'
+    }
   }, {
     sequelize,
     modelName: 'Order',
