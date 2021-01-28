@@ -165,10 +165,6 @@ class Controller {
     res.render('products');
   }
 
-  // static shoppingCartPage(req, res) {
-  //   res.render('shoppingCart');
-  // }
-
   static orderDetailsPage(req, res) {
     res.render('orderDetails');
   }
