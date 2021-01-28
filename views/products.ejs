@@ -1,3 +1,27 @@
 <%- include('./partials/navbar.ejs') %>
+
 <h1>Products</h1>
+
+<table style="width:80%" border="1">
+    <tr>
+      <th>Product ID</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Type</th>
+      <th>Stock</th>
+    </tr>
+        <% products.forEach(el => { %>
+            <tr>
+                <td> <%= el.id %> </td>
+                <td> <%= el.name %> </td>
+                <td> <%= el.price %> </td>
+                <td> <%= el.type %> </td>
+                <td> <%= el.stock %> </td>
+                <td>
+                    <a href="/shoppingCart">buy</a>
+                </td>
+            </tr>
+           <% }) %>
+  </table>
+
 <%- include('./partials/bottom.ejs') %>
