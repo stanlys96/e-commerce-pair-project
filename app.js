@@ -1,9 +1,12 @@
 const express = require('express');
 const router = require('./routes/index');
 const session = require('express-session');
+const formatPrice = require('./helpers/priceFormatter');
 
 const app = express();
 const port = 3000;
+
+app.locals.formatPrice = formatPrice;
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
