@@ -4,7 +4,7 @@ const session = require('express-session');
 const formatPrice = require('./helpers/priceFormatter');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.locals.formatPrice = formatPrice;
 
