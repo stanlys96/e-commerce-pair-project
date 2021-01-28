@@ -5,17 +5,17 @@ const Controller = require('../controllers/Controller');
 const registerRoutes = require('./register');
 const loginRoutes = require('./login');
 const productRoutes = require('./products');
-const shoppingCartRoutes = require('./shoppingCart');
 const orderDetails = require('./orderDetails');
 const logoutRoutes = require('./logout');
+const updateRoutes = require('./update');
 
 router.get('/', Controller.homePage);
 
 router.use('/register', registerRoutes);
 router.use('/login', loginRoutes);
 router.use('/products', productRoutes);
-router.use('/shoppingcart', shoppingCartRoutes);
 router.use('/orderdetails', orderDetails);
 router.use('/logout', logoutRoutes);
+router.use('/update', updateRoutes);
 
 module.exports = router;

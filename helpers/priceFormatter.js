@@ -1,7 +1,7 @@
 function formatPrice(value) {
-  let formatter = new Intl.NumberFormat('en-US', {
+  let formatter = new Intl.NumberFormat('id-ID', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'IDR',
   });
 
   return formatter.format(value);

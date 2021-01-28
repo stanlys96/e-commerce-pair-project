@@ -77,6 +77,54 @@ class Controller {
       })
   }
 
+  static updatePageGet(req, res) {
+    let error;
+    Customer
+      .findOne({
+        where: {
+          isLoggedIn: true
+        }
+      })
+      .then((customer) => {
+        if (!customer) {
+          res.redirect('/');
+        } else {
+          res.render('update', { data: customer, error });
+        }
+      })
+      .catch(err => {
+        res.send(err);
+      })
+  }
+
+  static updatePagePost(req, res) {
+    let id = +req.params.id;
+    let { full_name, email, address, phone_number, password } = req.body;
+    Customer.update({
+      full_name,
+      email,
+      address,
+      phone_number,
+      password
+    }, {
+      where: {
+        id
+      }
+    })
+      .then(() => {
+        res.redirect('/');
+      })
+      .catch(err => {
+        let messages = [];
+        if (err.errors.length > 0) {
+          err.errors.forEach(element => {
+            messages.push(element.message);
+          })
+        }
+        res.render('register', { error: messages });
+      })
+  }
+
   static logout(req, res) {
     Customer
       .findOne({
