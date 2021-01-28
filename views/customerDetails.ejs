@@ -1,0 +1,27 @@
+<%- include('./partials/navbar.ejs') %>
+
+<div class="customers-content">
+  <table>
+    <thead>
+      <tr>
+        <th>Unique Code</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= data.unique_code %></td>
+        <td><%= data.applyTitle() %></td>
+        <td><%= data.email %></td>
+        <td><%= data.address %></td>
+        <td><%= data.phone_number %></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<%- include('./partials/bottom.ejs') %>

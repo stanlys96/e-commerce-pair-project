@@ -13,14 +13,15 @@ class Controller {
   }
 
   static registerPost(req, res) {
-    let { full_name, email, address, phone_number, username, password } = req.body;
+    let { full_name, email, address, phone_number, username, password, gender } = req.body;
     let newCustomer = {
       full_name,
       email,
       address,
       phone_number,
       username,
-      password
+      password,
+      gender
     }
 
     Customer
@@ -170,6 +171,25 @@ class Controller {
 
   static orderDetailsPage(req, res) {
     res.render('orderDetails');
+  }
+
+  static customerDetailsPage(req, res) {
+    Customer
+      .findOne({
+        where: {
+          isLoggedIn: true
+        }
+      })
+      .then((customer) => {
+        if (!customer) {
+          res.redirect('/login');
+        } else {
+          res.render('customerDetails', { data: customer });
+        }
+      })
+      .catch(err => {
+        res.send(err);
+      })
   }
 }
 

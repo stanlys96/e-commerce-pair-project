@@ -13,6 +13,17 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Customer.hasMany(models.Order, { foreignKey: 'CustomerId' });
     }
+
+    applyTitle() {
+      let title;
+      if (this.gender === 'male') {
+        title = 'Mr. ';
+      } else if (this.gender === 'female') {
+        title = 'Mrs. ';
+      }
+
+      return `${title}${this.full_name}`;
+    }
   };
   Customer.init({
     full_name: {
@@ -63,13 +74,28 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    isLoggedIn: DataTypes.BOOLEAN
+    isLoggedIn: DataTypes.BOOLEAN,
+    gender: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          msg: 'Gender tidak boleh kosong'
+        }
+      }
+    },
+    unique_code: {
+      type: DataTypes.STRING
+    },
   }, {
     sequelize,
     modelName: 'Customer',
   });
 
   Customer.beforeCreate((user, options) => {
+    let randomNumber = Math.ceil(Math.random() * 1000);
+    let newCode = `${user.full_name} ${randomNumber}`;
+    newCode = newCode.split(' ').join('_');
+    user.unique_code = newCode;
     user.isLoggedIn = false;
   })
 
