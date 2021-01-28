@@ -28,18 +28,57 @@ ul li:nth-child(1) {
 ul li:nth-child(4) {
   display: block;
   background-color: royalblue;
-  margin-left: 650px;
+  margin-left: 550px;
 }
 
 ul li:nth-child(6) {
   background-color: green;
 }
 
+ul li:nth-child(7) {
+  background-color: brown;
+}
+
 /* Register */
 
 .register-content h1 {
-  margin-top: 70px;
+  margin-top: 50px;
   text-align: center;
+}
+
+.register-content h2 {
+  margin-top: 20px;
+  color: red;
+  text-align: center;
+  font-size: 15px;
+}
+
+.register-content p {
+  margin-top: 10px;
+  text-align: center;
+  color: red;
+}
+
+.register-content label:first-child {
+  display: inline-block;
+  margin-top: 25px;
+}
+
+.register-content form {
+  text-align: center;
+}
+
+
+.register-content input {
+  display: block;
+  margin: 15px auto;
+  width: 20%;
+}
+
+.register-content button {
+  padding: 5px 0;
+  margin-top: 10px;
+  width: 10%;
 }
 
 table {
@@ -57,4 +96,3 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
-}
