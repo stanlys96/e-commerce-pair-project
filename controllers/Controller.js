@@ -85,6 +85,7 @@ class Controller {
         }
       })
       .then((customer) => {
+<<<<<<< HEAD
         Customer
           .update({
             isLoggedIn: false
@@ -102,6 +103,29 @@ class Controller {
           .catch((err) => {
             res.send(err);
           })
+=======
+        if (!customer) {
+          res.redirect('/');
+        } else {
+          Customer
+            .update({
+              isLoggedIn: false
+            }, {
+              where: {
+                id: customer.id
+              }
+            })
+            .then(() => {
+              if (req.session.userId) {
+                req.session.userId = undefined;
+              }
+              res.redirect('/')
+            })
+            .catch((err) => {
+              res.send(err);
+            })
+        }
+>>>>>>> stanlykwok
       })
       .catch(err => {
         res.send(err);
