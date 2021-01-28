@@ -11,6 +11,7 @@ const mid = (req, res, next) => {
   }
 }
 
-router.get('/', mid, Controller.orderDetailsPage);
+router.get('/', mid, Controller.updatePageGet);
+router.post('/:id', Controller.updatePagePost);
 
 module.exports = router;

@@ -11,6 +11,6 @@ const mid = (req, res, next) => {
   }
 }
 
-router.get('/', mid, Controller.orderDetailsPage);
+router.get('/', mid, Controller.logout);
 
 module.exports = router;
