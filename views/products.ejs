@@ -2,7 +2,7 @@
 
 <h1>Products</h1><br><br>
 
-<table style="width:80%" border="1">
+<table style="width:80%" border="1" action="/products" method="POST">
     <tr>
       <th>Product ID</th>
       <th>Product Name</th>
@@ -19,7 +19,7 @@
                 <td> <%= el.type %> </td>
                 <td> <%= el.stock %> </td>
                 <td>
-                    <a href="/shoppingCart">buy</a>
+                    <button onclick="" type="submit">buy now!</button>
                 </td>
             </tr>
            <% }) %>
