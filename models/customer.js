@@ -92,7 +92,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Customer.beforeCreate((user, options) => {
-    let randomNumber = Math.ceil(Math.random() * 1000);
+    let randomNumber = Math.ceil(Math.random() * 100000);
     let newCode = `${user.full_name} ${randomNumber}`;
     newCode = newCode.split(' ').join('_');
     user.unique_code = newCode;
