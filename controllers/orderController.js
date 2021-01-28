@@ -1,11 +1,10 @@
 const { Product } = require(`./models`)
 
 class OrderController {
-    
-    static addOrder (res, req) {
+
+    static addOrder(res, req) {
         let tmp;
-            include: [Product]
-        }
+
         Order
             .findOne()
             .then((data) => {
