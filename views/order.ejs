@@ -1,0 +1,30 @@
+<%- include('./partials/navbar.ejs') %>
+
+<h1>Products</h1><br><br>
+
+<table style="width:80%" border="1">
+    <tr>
+      <th>No</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total Price</th>
+      <th>Action/th>
+    </tr>
+        <% products.forEach(el => { %>
+            <tr>
+                <td> <%= el.id %> </td>
+                <td> <%= el.name %> </td>
+                <td> <%= formatPrice(el.price) %> </td>
+                <td> <%= el.quantity %> </td>
+                <td> <%= formatPrice(el.price) %> </td>
+                <td>
+                    <form action="/order" method="POST">
+                        <button input type="hidden" name="id" value="<%= el.id %>">buy now!</button>
+                    </form>
+                </td>
+            </tr>
+           <% }) %>
+  </table>
+
+  <%- include('./partials/bottom.ejs') %>
