@@ -19,7 +19,9 @@
                 <td> <%= el.type %> </td>
                 <td> <%= el.stock %> </td>
                 <td>
-                    <a href="/shoppingCart">buy</a>
+                    <form action="/products" method="POST">
+                        <button input type="hidden" name="id" value="<%= el.id %>">buy now!</button>
+                    </form>
                 </td>
             </tr>
            <% }) %>

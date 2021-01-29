@@ -4,6 +4,7 @@ const ProductController = require('../controllers/productController');
 const router = express.Router();
 
 router.get('/', ProductController.productPage);
-// router.get('/', ProductController.productsById)
+router.get('/', ProductController.productsById)
+router.post('/', ProductController.buyProduct)
 
 module.exports = router;
